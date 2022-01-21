@@ -1,0 +1,5 @@
+project('bgfx', 'cpp')
+add_global_arguments('-DBX_CONFIG_DEBUG=1', language : 'cpp')
+#subdir('bgfx')
+#subdir('bimg')
+subdir('meson/bx')
