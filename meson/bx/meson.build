@@ -14,7 +14,7 @@ add_global_arguments(
 
  msvc_compiler = meson.get_compiler('cpp')
 
-library('bx', [
+bx_lib = static_library('bx', [
   bx_root + 'src/allocator.cpp',
   bx_root + 'src/bounds.cpp',
   bx_root + 'src/bx.cpp',
@@ -40,6 +40,13 @@ library('bx', [
 ],
 include_directories: bx_inc,
 dependencies: [
- msvc_compiler.find_library('psapi')
+ msvc_compiler.find_library('psapi'),
+ msvc_compiler.find_library('gdi32'),
+ msvc_compiler.find_library('DelayImp'),
 ]
+)
+
+bx_dep = declare_dependency(
+  include_directories: bx_inc,
+  link_with: bx_lib
 )
