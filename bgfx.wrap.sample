@@ -1,0 +1,9 @@
+[wrap-git]
+directory = bgfx
+url = git@github.com:pminiszewski/bgfx-meson.git
+revision = main
+clone-recursive = true
+[provide]
+bgfx = bgfx_dep
+bx = bx_dep
+bimg = bimg_dep
