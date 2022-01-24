@@ -59,7 +59,7 @@ example_glue_dep = declare_dependency(
   link_with: example_glue_lib
 )
 
-examples_bin = executable('examples', [
+examples_exe = executable('examples', [
 examples_root + '46-fsr/fsr.cpp',
 examples_root + '46-fsr/app.cpp',
 examples_root + '45-bokeh/bokeh.cpp',
