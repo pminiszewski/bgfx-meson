@@ -115,7 +115,10 @@ include_directories: [
   bimg_root + '3rdparty/iqa/include',
   bimg_root + '3rdparty/tinyexr/deps/miniz',
 ],
-dependencies: bx_dep
+dependencies: bx_dep,
+cpp_args: [
+  '/wd4828',
+]
 )
 
 bimg_dep = declare_dependency(

@@ -37,11 +37,6 @@ dependencies: [
  msvc_compiler.find_library('psapi'),
  msvc_compiler.find_library('gdi32'),
  msvc_compiler.find_library('DelayImp'),
-],
-cpp_args: [
-  '-D__STDC_LIMIT_MACROS',
-  '-D__STDC_FORMAT_MACROS',
-  '-D__STDC_CONSTANT_MACROS',
 ]
 )
 

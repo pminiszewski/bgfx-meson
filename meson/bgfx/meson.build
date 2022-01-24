@@ -49,6 +49,9 @@ bgfx_root + '3rdparty/dear-imgui/imgui_widgets.cpp',
 bgfx_root + '3rdparty/dear-imgui/imgui.cpp'
 ],
 include_directories: bgfx_inc,
+cpp_args: [
+  '/wd4828'
+],
 dependencies: [
   bx_dep,
   bimg_dep

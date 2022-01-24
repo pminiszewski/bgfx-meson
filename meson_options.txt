@@ -1,0 +1,1 @@
+option('with_bgfx_examples', type: 'boolean', value: false)

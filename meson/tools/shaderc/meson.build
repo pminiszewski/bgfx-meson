@@ -194,6 +194,10 @@ include_directories: [
   bgfx_root + '3rdparty/glsl-optimizer/src/mesa',
   bgfx_root + '3rdparty/glsl-optimizer/src/node',
   bgfx_root + '3rdparty/glsl-optimizer/src/glsl',
+],
+cpp_args: [
+  '/wd4291',
+  '/wd4005'
 ])
 
 spirv_cross_lib = static_library('spirvcross', [
