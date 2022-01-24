@@ -120,7 +120,9 @@ dependencies: [
 ],
 cpp_args: [
   '-D_WIN64',
-  '/DEBUG'
+  '-D__STDC_LIMIT_MACROS',
+  '-D__STDC_FORMAT_MACROS',
+  '-D__STDC_CONSTANT_MACROS'
 ],
 link_args: [
   #'/entry:mainCRTStartup'
