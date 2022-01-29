@@ -9,6 +9,10 @@ examples_common_inc = include_directories([
   examples_root + 'common/nanovg',
   examples_root + 'common/ps',
 ])
+example_common_args = []
+if get_option('use_entry')
+example_common_args += '-DUSE_ENTRY=1'
+endif
 
 example_common_lib = static_library('example-common', [
   examples_root + 'common/debugdraw/debugdraw.cpp',
@@ -36,6 +40,7 @@ example_common_lib = static_library('example-common', [
   examples_root + 'common/cube_atlas.cpp',
 ],
 include_directories: examples_common_inc,
+cpp_args: example_common_args,
 dependencies: [
   bx_dep,
   bimg_dep,

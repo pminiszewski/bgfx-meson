@@ -1,1 +1,2 @@
 option('with_bgfx_examples', type: 'boolean', value: false)
+option('use_entry', type: 'boolean', value: true)
