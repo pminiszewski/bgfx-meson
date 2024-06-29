@@ -3,36 +3,14 @@ shader_inc = [meson.current_source_dir() / bgfx_root / 'src', meson.current_sour
 bgfx_inc = include_directories([
   bgfx_root + 'include',
   bgfx_root + '3rdparty',
-  bgfx_root + '3rdparty/dxsdk/include',
+  bgfx_root + '3rdparty/directx-headers/include',
+  bgfx_root + '3rdparty/directx-headers/include/directx',
   bgfx_root + '3rdparty/khronos',
 
 ])
 
 bgfx_lib = static_library('bgfx', [
-  bgfx_root + 'src/bgfx.cpp',
-  bgfx_root + 'src/debug_renderdoc.cpp',
-  bgfx_root + 'src/dxgi.cpp',
-  bgfx_root + 'src/glcontext_egl.cpp',
-  bgfx_root + 'src/glcontext_glx.cpp',
-  bgfx_root + 'src/glcontext_html5.cpp',
-  bgfx_root + 'src/glcontext_wgl.cpp',
-  bgfx_root + 'src/nvapi.cpp',
-  bgfx_root + 'src/renderer_agc.cpp',
-  bgfx_root + 'src/renderer_d3d9.cpp',
-  bgfx_root + 'src/renderer_d3d11.cpp',
-  bgfx_root + 'src/renderer_d3d12.cpp',
-  bgfx_root + 'src/renderer_gl.cpp',
-  bgfx_root + 'src/renderer_gnm.cpp',
-  bgfx_root + 'src/renderer_noop.cpp',
-  bgfx_root + 'src/renderer_nvn.cpp',
-  bgfx_root + 'src/renderer_vk.cpp',
-  bgfx_root + 'src/renderer_webgpu.cpp',
-  bgfx_root + 'src/shader_dx9bc.cpp',
-  bgfx_root + 'src/shader_dxbc.cpp',
-  bgfx_root + 'src/shader_spirv.cpp',
-  bgfx_root + 'src/shader.cpp',
-  bgfx_root + 'src/topology.cpp',
-  bgfx_root + 'src/vertexlayout.cpp',
+  bgfx_root + 'src/amalgamated.cpp',
 ],
 include_directories: bgfx_inc,
 dependencies: [
@@ -50,7 +28,7 @@ bgfx_root + '3rdparty/dear-imgui/imgui.cpp'
 ],
 include_directories: bgfx_inc,
 cpp_args: [
-  '/wd4828'
+  '/wd4828',
 ],
 dependencies: [
   bx_dep,
