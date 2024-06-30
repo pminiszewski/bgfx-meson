@@ -1,6 +1,6 @@
 texturec_root = '../../../bimg/tools/texturec/'
 
-texturec_exe = executable('texturec', [
+executable('texturec', [
   texturec_root + 'texturec.cpp',
   ],
   link_with: [

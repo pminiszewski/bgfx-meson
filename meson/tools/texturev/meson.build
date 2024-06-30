@@ -1,6 +1,6 @@
 texturev_root = '../../../bgfx/tools/texturev/'
 
-texturev_exe = executable('texturev', [
+executable('texturev', [
   texturev_root + 'texturev.cpp',
   ],
   dependencies: [

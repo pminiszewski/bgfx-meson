@@ -15,5 +15,7 @@ add_project_arguments([
 subdir('meson/bx')
 subdir('meson/bimg')
 subdir('meson/bgfx')
+if get_option('with_bgfx_examples') 
 subdir('meson/examples')
+endif
 subdir('meson/tools')

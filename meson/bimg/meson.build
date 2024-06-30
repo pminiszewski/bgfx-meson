@@ -114,7 +114,4 @@ bimg_dep = declare_dependency(
   link_with: [
     bimg_lib,
     bimg_decode_lib
-  ]
-)
-
-
+  ])
