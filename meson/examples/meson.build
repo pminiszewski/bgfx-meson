@@ -1,69 +1,7 @@
 examples_root = '../../bgfx/examples/'
 
-examples_common_inc = include_directories([
-  examples_root + 'common',
-  examples_root + 'common/debugdraw',
-  examples_root + 'common/entry',
-  examples_root + 'common/font',
-  examples_root + 'common/imgui',
-  examples_root + 'common/nanovg',
-  examples_root + 'common/ps',
-])
-example_common_args = []
-if get_option('use_entry')
-example_common_args += '-DUSE_ENTRY=1'
-endif
 
-example_common_lib = static_library('example-common', [
-  examples_root + 'common/debugdraw/debugdraw.cpp',
-  examples_root + 'common/entry/cmd.cpp',
-  examples_root + 'common/entry/dialog.cpp',
-  examples_root + 'common/entry/entry_android.cpp',
-  examples_root + 'common/entry/entry_glfw.cpp',
-  examples_root + 'common/entry/entry_html5.cpp',
-  examples_root + 'common/entry/entry_noop.cpp',
-  examples_root + 'common/entry/entry_sdl.cpp',
-  examples_root + 'common/entry/entry_windows.cpp',
-  examples_root + 'common/entry/entry_x11.cpp',
-  examples_root + 'common/entry/entry.cpp',
-  examples_root + 'common/entry/input.cpp',
-  examples_root + 'common/font/font_manager.cpp',
-  examples_root + 'common/font/text_buffer_manager.cpp',
-  examples_root + 'common/font/text_metrics.cpp',
-  examples_root + 'common/font/utf8.cpp',
-  examples_root + 'common/imgui/imgui.cpp',
-  examples_root + 'common/nanovg/nanovg_bgfx.cpp',
-  examples_root + 'common/nanovg/nanovg.cpp',
-  examples_root + 'common/ps/particle_system.cpp',
-  examples_root + 'common/bgfx_utils.cpp',
-  examples_root + 'common/camera.cpp',
-  examples_root + 'common/cube_atlas.cpp',
-],
-include_directories: examples_common_inc,
-cpp_args: example_common_args,
-dependencies: [
-  bx_dep,
-  bimg_dep,
-  bgfx_dep
-])
-
-examples_common_dep = declare_dependency(
-  include_directories: examples_common_inc,
-  link_with: example_common_lib
-)
-
-example_glue_lib = static_library('example-glue', [
-    examples_root + 'common/example-glue.cpp'
-],
-dependencies: [
-  bx_dep,
-  bgfx_dep
-],
-)
-
-example_glue_dep = declare_dependency(
-  link_with: example_glue_lib
-)
+subdir('common')
 
 if not get_option('with_bgfx_examples') 
 subdir_done()
