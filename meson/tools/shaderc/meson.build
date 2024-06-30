@@ -467,7 +467,7 @@ include_directories: [
   bgfx_root + '3rdparty/spirv-headers/include',
 ])
 
-executable('shaderc', [
+shaderc_exe = executable('shaderc', [
   bgfx_root + 'src/shader_dxbc.cpp',
   bgfx_root + 'src/shader.cpp',
   bgfx_root + 'src/shader_spirv.cpp',
