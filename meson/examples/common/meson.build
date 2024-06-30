@@ -10,7 +10,7 @@ common_inc = include_directories([
 ])
 
 example_common_args = []
-if get_option('use_entry').enabled()
+if get_option('use_entry')
   example_common_args += '-DUSE_ENTRY=1'
 endif
 
