@@ -1,6 +1,6 @@
 geometryv_root = '../../../bgfx/tools/geometryv/'
 
-executable('geometryv', [
+geometryv_exe = executable('geometryv', [
   geometryv_root + 'geometryv.cpp',
   ],
   dependencies: [
