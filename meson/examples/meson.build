@@ -52,13 +52,18 @@ examples_common_dep = declare_dependency(
   link_with: example_common_lib
 )
 
+if not get_option('with_bgfx_examples') 
+subdir_done()
+endif
+
 example_glue_lib = static_library('example-glue', [
     examples_root + 'common/example-glue.cpp'
 ],
 dependencies: [
   bx_dep,
   bgfx_dep
-])
+],
+)
 
 example_glue_dep = declare_dependency(
   link_with: example_glue_lib
